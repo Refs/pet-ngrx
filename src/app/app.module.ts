@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CreateComponent } from './pages/create/create.component';
 import { CompleteComponent } from './pages/complete/complete.component';
+import { TagShapeComponent } from './pages/create/tag-shape/tag-shape.component';
 
 
 
@@ -20,7 +21,8 @@ import { CompleteComponent } from './pages/complete/complete.component';
     AppComponent,
     HomeComponent,
     CreateComponent,
-    CompleteComponent
+    CompleteComponent,
+    TagShapeComponent
   ],
   imports: [
     BrowserModule,

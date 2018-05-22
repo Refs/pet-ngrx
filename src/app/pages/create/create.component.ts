@@ -24,14 +24,65 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   constructor(private store: Store<PetTag>) {
     this.tagState$ = store.pipe(
+      // 对应app.module.ts中的 StoreModule.forRoot({petTag: petTagReducer }) 若以前后台交互的逻辑来说，这句话的意义在于指定reducers, 就指定一个处理函数； 类似于一个网址，而 action 就类似于参数
       select('petTag')
     );
   }
 
   ngOnInit() {
+    this.tagStateSubscription = this.tagState$.subscribe(
+      (state) => {
+        this.petTag = state;
+        this.done = !!(this.petTag.shape && this.petTag.text);
+      }
+    );
   }
 
   ngOnDestroy() {
+    this.tagStateSubscription.unsubscribe();
   }
+
+  // tslint:disable-next-line:max-line-length
+  //  In a more complex app, you may wish to dispatch actions in an actions creator service that can be injected into your components. 这就类似于我们封装的 http 服务；
+
+  selectShapeHandler(fontType: string) {
+    this.store.dispatch({
+      type: SELECT_FONT,
+      payload: fontType
+    });
+  }
+
+  /**
+   *
+   *
+   * @param {string} text
+   * @memberof CreateComponent
+   */
+  addTextHandler(text: string) {
+    this.store.dispatch({
+      type: ADD_TEXT,
+      payload: text
+    });
+  }
+
+  toggleClipHandler() {
+    this.store.dispatch({
+      type: TOGGLE_CLIP
+    });
+  }
+
+  toggleGemsHandler() {
+    this.store.dispatch({
+      type: TOGGLE_GEMS
+    });
+  }
+
+  submit() {
+    this.store.dispatch({
+      type: COMPLETE,
+      payload: true
+    });
+  }
+
 
 }
