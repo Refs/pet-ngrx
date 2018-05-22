@@ -1,5 +1,10 @@
 # ngrx learn
 
+> 历史文档 
+ 
+* angular 5  : http://devdocs.io/
+* rxjs 5 : https://github.com/ReactiveX/rxjs/tree/stable/doc
+
 ## bug1: Property Payload does not exist on type
 
 > https://github.com/ngrx/platform/issues/31
