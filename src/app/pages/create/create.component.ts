@@ -21,7 +21,6 @@ export class CreateComponent implements OnInit, OnDestroy {
   petTag: PetTag;
   done = false;
 
-
   constructor(private store: Store<PetTag>) {
     this.tagState$ = store.pipe(
       // 对应app.module.ts中的 StoreModule.forRoot({petTag: petTagReducer }) 若以前后台交互的逻辑来说，这句话的意义在于指定reducers, 就指定一个处理函数； 类似于一个网址，而 action 就类似于参数
@@ -32,7 +31,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.tagStateSubscription = this.tagState$.subscribe(
       (state) => {
-        this.petTag = state;
+        this.petTag = state as PetTag;
         this.done = !!(this.petTag.shape && this.petTag.text);
       }
     );

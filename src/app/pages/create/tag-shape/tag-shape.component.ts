@@ -9,7 +9,7 @@ export class TagShapeComponent implements OnInit {
 
   tagShape: string;
 
-  @Output() slectShapeEvent = new EventEmitter();
+  @Output() selectShapeEvent = new EventEmitter();
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class TagShapeComponent implements OnInit {
   }
 
   selectShape (shape: string) {
-    this.slectShapeEvent.emit(shape);
+    this.selectShapeEvent.emit(shape);
   }
 
 }
