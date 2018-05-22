@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
@@ -27,6 +29,7 @@ import { TagShapeComponent } from './pages/create/tag-shape/tag-shape.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     StoreModule.forRoot({
       petTag: petTagReducer
     })

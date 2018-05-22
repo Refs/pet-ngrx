@@ -42,10 +42,18 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.tagStateSubscription.unsubscribe();
   }
 
+
+  selectShapeHandler(shape: string) {
+    this.store.dispatch({
+      type: SELECT_SHAPE,
+      payload: shape
+    });
+  }
+
   // tslint:disable-next-line:max-line-length
   //  In a more complex app, you may wish to dispatch actions in an actions creator service that can be injected into your components. 这就类似于我们封装的 http 服务；
 
-  selectShapeHandler(fontType: string) {
+  selectFontHandler(fontType: string) {
     this.store.dispatch({
       type: SELECT_FONT,
       payload: fontType
