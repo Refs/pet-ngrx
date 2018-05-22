@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tag-shape',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagShapeComponent implements OnInit {
 
+  tagShape: string;
+
+  @Output() slectShapeEvent = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectShape (shape: string) {
+    this.slectShapeEvent.emit(shape);
   }
 
 }
