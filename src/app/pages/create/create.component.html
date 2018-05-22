@@ -9,3 +9,8 @@
   *ngIf="petTag.shape"
   (selectFontEvent)="selectFontHandler($event)"
   (addTextEvent)="addTextHandler($event)"></app-tag-text>
+
+  <app-tag-extras
+  *ngIf="petTag.shape"
+  (toggleClipEvent)="toggleClipHandler()"
+  (toggleGemsEvent)="toggleGemsHandler()"></app-tag-extras>
