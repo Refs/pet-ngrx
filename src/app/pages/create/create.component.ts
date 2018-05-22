@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import {  SELECT_SHAPE, SELECT_FONT, ADD_TEXT, TOGGLE_CLIP, TOGGLE_GEMS, COMPLETE } from '../../actions/pet-tag.actions';
 import { PetTag } from '../../models/pet-tag.model';
 
@@ -17,9 +17,16 @@ import { PetTag } from '../../models/pet-tag.model';
 export class CreateComponent implements OnInit, OnDestroy {
 
   tagState$: Observable<PetTag>;
+  private tagStateSubscription: Subscription;
+  petTag: PetTag;
+  done = false;
 
 
-  constructor() { }
+  constructor(private store: Store<PetTag>) {
+    this.tagState$ = store.pipe(
+      select('petTag')
+    );
+  }
 
   ngOnInit() {
   }
