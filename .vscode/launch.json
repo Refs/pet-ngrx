@@ -8,7 +8,9 @@
           "type": "chrome",
           "request": "attach",
           "name": "Attach to Chrome",
+          //  此处 最好不要 写url ， 而只用写端口号， vscode 会让我去选择 当前已经打开的页面， 而不是在这边写死， 否则路由一跳转， 就不行了；
           "port": 9222,
+          // 断点 不停 主要是 soourcemap 文件地址不对， 下面 尤为注意， 和ionic 的设置方式是不一样的；
           "webRoot": "${workspaceFolder}",
           "sourceMaps": true,
           "skipFiles": [
