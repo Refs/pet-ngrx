@@ -22,7 +22,7 @@ export class TagTextComponent implements OnInit {
     this.selectFontEvent.emit(fontType);
   }
 
-  addtext(text: string) {
+  addText(text: string) {
     this.addTextEvent.emit(text);
   }
 

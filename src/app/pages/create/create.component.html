@@ -4,3 +4,8 @@
 </p>
 
 <app-tag-shape (selectShapeEvent)="selectShapeHandler($event)"></app-tag-shape>
+
+<app-tag-text
+  *ngIf="petTag.shape"
+  (selectFontEvent)="selectFontHandler($event)"
+  (addTextEvent)="addTextHandler($event)"></app-tag-text>
