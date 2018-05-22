@@ -15,6 +15,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CreateComponent } from './pages/create/create.component';
 import { CompleteComponent } from './pages/complete/complete.component';
 import { TagShapeComponent } from './pages/create/tag-shape/tag-shape.component';
+import { TagTextComponent } from './pages/create/tag-text/tag-text.component';
 
 
 
@@ -24,7 +25,8 @@ import { TagShapeComponent } from './pages/create/tag-shape/tag-shape.component'
     HomeComponent,
     CreateComponent,
     CompleteComponent,
-    TagShapeComponent
+    TagShapeComponent,
+    TagTextComponent
   ],
   imports: [
     BrowserModule,
