@@ -30,6 +30,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.tagStateSubscription = this.tagState$.subscribe(
+      // 此处之所以会执行，可能是订阅动作，触发了state的初始化逻辑，导致了state 被初始化，从而此处产生了动作；
       (state) => {
         this.petTag = state as PetTag;
         this.done = !!(this.petTag.shape && this.petTag.text);
