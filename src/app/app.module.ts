@@ -8,6 +8,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { petTagReducer } from './reducers/pet-tag.reducer';
 
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+
 
 
 import { AppComponent } from './app.component';
@@ -38,6 +41,9 @@ import { TagPreviewComponent } from './pages/tag-preview/tag-preview.component';
     FormsModule,
     StoreModule.forRoot({
       petTag: petTagReducer
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 10 // number of states to retain
     })
   ],
   providers: [],
