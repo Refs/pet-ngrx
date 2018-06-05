@@ -1,10 +1,5 @@
-# ngrx learn
+# ngrx 
 
-> article: Managing State in Angular with ngrx/store 
-> https://auth0.com/blog/managing-state-in-angular-with-ngrx-store/
-
-> 历史文档 
- 
 * angular 5  : http://devdocs.io/
 * rxjs 5 : https://github.com/ReactiveX/rxjs/tree/stable/doc
 
